@@ -1,15 +1,28 @@
 import { useParams } from "react-router-dom";
 import useFetch from "../useFetch";
 import { useState } from "react";
+import useDelete from "../useDelete";
+import { useNavigate } from "react-router-dom";
+
 
 const BlogDetails = () => {
-
+    const navigate = useNavigate();
     const { id } = useParams()
 
-    const [url, setUrl] = useState('http://localhost:8000/blogs/' + id)
+    const [url, setUrl] = useState('http://localhost:8000/blogs/')
     const { data: blog, isPending, error } = useFetch(url)
 
+    const {deleteData, isLoading, error: deleteError} = useDelete(url)
 
+    const handleClick = () => {
+        deleteData(id)
+        while(isLoading){}
+        if(deleteError){
+            console.log(`Error deleting blog: ${deleteError}`)
+            return
+        }
+        navigate('/', { replace: true })
+    }
 
     return (
         <div className="blog-details">
@@ -20,6 +33,8 @@ const BlogDetails = () => {
                 <h2>{blog.title}</h2>
                 <p>Writen by {blog.author}</p>
                 <div>{blog.body}</div>
+                {isLoading && !deleteError && <div className='message'>Deleting...</div>}
+                { !isLoading ? <button onClick={() => handleClick()}>Delete</button> : <button disabled>Deleting...</button>}
             </article>)}
 
 

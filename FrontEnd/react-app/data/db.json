@@ -1,18 +1,6 @@
 {
   "blogs": [
     {
-      "title": "Naslov 1",
-      "body": "Prvi blog...",
-      "author": "Neca",
-      "id": "1"
-    },
-    {
-      "title": "Naslov 2",
-      "body": "Drugi blog...",
-      "author": "Djosa",
-      "id": "2"
-    },
-    {
       "title": "Naslov 3",
       "body": "Treci blog...",
       "author": "Neca",
@@ -29,18 +17,6 @@
       "body": "Vec pravim drugi test",
       "author": "Necko",
       "id": "2pq5cZSptcQ"
-    },
-    {
-      "title": "Test blog",
-      "body": "Opet pravim test",
-      "author": "Necko",
-      "id": "vQ7CwMt0HPw"
-    },
-    {
-      "title": "Test blog v2",
-      "body": "Ogroman tekst",
-      "author": "Nemanja",
-      "id": "6B7CvyUeVAY"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
