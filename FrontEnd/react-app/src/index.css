@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+/*---------NAVBAR---------*/
+
+
+.navbar {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.navbar h1 {
+  color: #f1356d
+}
+
+.navbar .links {
+  margin-left: auto;
+}
+
+.navbar a {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.navbar a.active {
+  color: white;
+  background-color: #f1356d;
+  border-radius: 8px;
+}
+
+.navbar a:hover {
+  color: #f1356d;
+}
+
+.navbar a.active:hover {
+  color: white;
+}
+
+/*---------CONTENT---------*/
+
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/*---------HOME---------*/
+
+
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+div .message {
+  font-size: 30px;
+}
+
+.blog-list {
+  display: flex;
+  flex-direction: column;
+  align-items: first baseline;
+  justify-content: center;
+  gap: 10px;
+}
+
+.blog-preview {
+  border: 1px solid #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.blog-preview a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.blog-preview h2 {
+  margin-bottom: 10px;
+}
+
+.blog-preview button {
+  margin-top: 10px;
+}
+
+.blog-preview:hover {
+  border-color: #f1356d;
+  box-shadow: 10px 10px 20px rgba(241, 53, 109, 0.2);
+  width: 100%;
+}
+
+
+/*---------BLOG DETAILS---------*/
+
+
+.blog-details{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.blog-details article {
+  border: 1px solid #f2f2f2;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+
+/*---------CREATE---------*/
+
+.create{
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.create label{
+  text-align: left;
+  display: block;
+}
+.create h2{
+  font-size: 20px;
+  color: rgb(223, 27, 27);
+  margin-bottom: 30px;
+}
+
+.create input, .create textarea, .create select{
+  width: 100%;
+  padding: 6px 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.create button{
+  background-color: #f1356d;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}

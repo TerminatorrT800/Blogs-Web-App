@@ -1,0 +1,9 @@
+services: 
+  react:
+    build: ./FrontEnd/react-app
+    container_name: react_c
+    ports:
+      - "5173:5173"
+    stdin_open: true
+    tty: true
+    
