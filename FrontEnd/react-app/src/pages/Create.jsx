@@ -1,6 +1,6 @@
 import { useState } from "react";
 import usePost from "../usePost";
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 const Create = () => {
     const [title, setTitle] = useState("")
     const [body, setBody] = useState("")
@@ -10,11 +10,11 @@ const Create = () => {
 
     const navigate = useNavigate()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const blog = { title, body, author }
         console.log(`Initiated post ${isLoading}`)
-        postData(blog)
+        await postData(blog)
         if(!error){
             navigate('/', { replace: true })
         }

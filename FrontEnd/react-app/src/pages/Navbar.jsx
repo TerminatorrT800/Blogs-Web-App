@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
     return (
@@ -6,9 +6,8 @@ const Navbar = () => {
         <h1>React App</h1>
         <div className="links">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/create" style = {{ 
-                
-             }}>New Blog</NavLink>
+            <NavLink to="/create" >New Blog</NavLink>
+            <NavLink to="/help" >Help</NavLink>
         </div>
     </nav>);
 }

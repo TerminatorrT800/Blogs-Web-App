@@ -1,24 +1,45 @@
-import Navbar from "./Navbar"
-import Home from "./pages/Home"
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
-import Create from "./pages/Create"
-import BlogDetails from "./pages/BlogDetails"
+//Router
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import request from "./request";
+const apiUrl = import.meta.env.VITE_API_URL
+
+//Pages
+import Home from "./pages/Home";
+import Create from "./pages/Create";
+import BlogDetails from "./pages/BlogDetails";
+import Faq from "./pages/help/Faq";
+import Contact from "./pages/help/Contact";
+
+//Layouts
+import RootLayout from "./layouts/RootLayout";
+import HelpLayout from "./layouts/HelpLayout";
+
+
 
 function App() {
-  console.log('app component rendered')
+
+  const controller = new AbortController();
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Home />} loader={async() => await request(`${apiUrl}/blogs`, { signal: controller.signal })} />
+        <Route path="create" element={<Create />} />
+        <Route path="blogs/:id" element={<BlogDetails />} loader={async() => await request(`${apiUrl}/blogs/:id`, { signal: controller.signal })} />
+        <Route path="help" element={<HelpLayout />}>
+          <Route path="faq" element={<Faq />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Route>
+
+    )
+  )
+
+
+
+
   return (
-    <Router >
-      <div className="App">
-        <Navbar />
-        <div className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/create" element={<Create />} />
-            <Route path="/blogs/:id" element = {<BlogDetails/>}/>
-          </Routes>
-        </div>
-      </div>
-    </Router>
+    <RouterProvider router={router} />
   )
 }
 

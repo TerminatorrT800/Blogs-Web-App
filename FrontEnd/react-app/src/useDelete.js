@@ -10,10 +10,9 @@ const useDelete = (url) => {
         setError(null)
 
         try{
-                const response = await request(`${url}${id}`, {method:'DELETE'})
-                setIsLoading(false)
-                return response
-
+            const response = await request(`${url}/${id}`, {method:'DELETE'})
+            setIsLoading(false)
+            return response
 
         }catch(error){
             setError(error)

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import request from './request.js';
 
-
 const usePost = (url) => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -11,7 +10,7 @@ const usePost = (url) => {
         setError(null)
 
         try {
-            const data = await  request(url, { method: "POST", body })
+            const data = await request(url, { method: "POST", body })
             
             setIsLoading(false)
             return data;

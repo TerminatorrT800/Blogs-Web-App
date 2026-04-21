@@ -1,14 +1,10 @@
-import { useState } from "react";
-import useFetch from "./useFetch";
-import { NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom";
 
 const BlogList = ({ blogs, title }) => {
 
     return (
         <div className="blog-list">
             <h2>{title}</h2>
-
-
             {blogs.map((blog) => (
                 <div className="blog-preview" key={blog.id}>
                     <NavLink to={`/blogs/${blog.id}`}>

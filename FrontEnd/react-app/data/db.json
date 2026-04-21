@@ -11,12 +11,18 @@
       "body": "Prvi test blog",
       "author": "Necko",
       "id": "6slfRA0rae0"
+    }
+  ],
+  "users": [
+    {
+      "name": "Neca",
+      "password": "test",
+      "id": 1
     },
     {
-      "title": "Blog broj 6",
-      "body": "Vec pravim drugi test",
-      "author": "Necko",
-      "id": "2pq5cZSptcQ"
+      "name": "Necko",
+      "password": "test",
+      "id": 2
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

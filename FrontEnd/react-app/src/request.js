@@ -2,7 +2,7 @@ const request = async (url, { method = "GET", body = null, signal } = {}) => {
     const options = {
         method,
         signal,
-        headers: [],
+        headers: {},
     }
 
     if (body) {

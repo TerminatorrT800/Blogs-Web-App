@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
+:root {
+  --primary: #f1356d
+}
+
 * {
   margin: 0;
   font-family: "Quicksand";
@@ -70,7 +74,7 @@ div .message {
 .blog-list {
   display: flex;
   flex-direction: column;
-  align-items: first baseline;
+  align-items: stretch;
   justify-content: center;
   gap: 10px;
 }
@@ -79,6 +83,8 @@ div .message {
   border: 1px solid #f2f2f2;
   padding: 20px;
   border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .blog-preview a {
@@ -104,7 +110,7 @@ div .message {
 /*---------BLOG DETAILS---------*/
 
 
-.blog-details{
+.blog-details {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -119,23 +125,26 @@ div .message {
 
 /*---------CREATE---------*/
 
-.create{
+.create {
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
 }
 
-.create label{
+.create label {
   text-align: left;
   display: block;
 }
-.create h2{
+
+.create h2 {
   font-size: 20px;
   color: rgb(223, 27, 27);
   margin-bottom: 30px;
 }
 
-.create input, .create textarea, .create select{
+.create input,
+.create textarea,
+.create select {
   width: 100%;
   padding: 6px 12px;
   margin: 10px 0;
@@ -144,7 +153,81 @@ div .message {
   display: block;
 }
 
-.create button{
+.create button {
+  background-color: #f1356d;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+
+/*---------NotFound---------*/
+
+.not-found-layout {
+  display: flex;
+  padding: 120px;
+  text-align: center;
+  justify-content: center;
+}
+
+
+
+/*---------Help---------*/
+
+.help-layout nav {
+  display: flex;
+  margin: 20px;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.help-layout nav a {
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.help-layout nav a:hover {
+  border-color: var(--primary);
+}
+
+.help-layout nav a.active {
+  background: var(--primary);
+}
+
+.faq .question {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 5px 20px;
+  border-radius: 4px;
+  margin: 20px 0;
+}
+
+.contact-form {
+  margin-top: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 300px;
+  padding: 6px 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.contact-form input,
+.contact-form textarea,
+.contact-form span
+{
+  display: block;
+}
+
+.contact-form button {
   background-color: #f1356d;
   color: white;
   border: none;
