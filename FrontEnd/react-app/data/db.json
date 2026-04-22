@@ -11,18 +11,24 @@
       "body": "Prvi test blog",
       "author": "Necko",
       "id": "6slfRA0rae0"
+    },
+    {
+      "title": "Novi blog",
+      "body": "adaskfashflasfaslkhfsfdsad",
+      "author": "Nemanja",
+      "id": "JIRMz9b5fQY"
     }
   ],
   "users": [
     {
       "name": "Neca",
       "password": "test",
-      "id": 1
+      "id": "1"
     },
     {
       "name": "Necko",
       "password": "test",
-      "id": 2
+      "id": "2"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
