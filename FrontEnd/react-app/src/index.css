@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 :root {
-  --primary: #f1356d
+  --primary: #f1356d;
 }
 
 * {
@@ -11,7 +11,6 @@
 }
 
 /*---------NAVBAR---------*/
-
 
 .navbar {
   padding: 20px;
@@ -23,7 +22,7 @@
 }
 
 .navbar h1 {
-  color: #f1356d
+  color: #f1356d;
 }
 
 .navbar .links {
@@ -58,8 +57,31 @@
   padding: 20px;
 }
 
-/*---------HOME---------*/
+/*---------BREADCRUMBS---------*/
 
+.breadcrumbs {
+  margin: 20px auto;
+}
+
+.breadcrumbs > * {
+  display: inline-block;
+  margin-right: 10px;
+}
+.crumb a {
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.breadcrumbs .crumb:after {
+  content: ">";
+  margin-left: 10px;
+}
+
+.breadcrumbs .crumb:last-child:after {
+  display: none;
+}
+
+/*---------HOME---------*/
 
 .home {
   display: flex;
@@ -106,9 +128,7 @@ div .message {
   width: 100%;
 }
 
-
 /*---------BLOG DETAILS---------*/
-
 
 .blog-details {
   display: flex;
@@ -121,7 +141,6 @@ div .message {
   padding: 20px;
   border-radius: 5px;
 }
-
 
 /*---------CREATE---------*/
 
@@ -162,8 +181,6 @@ div .message {
   cursor: pointer;
 }
 
-
-
 /*---------NotFound---------*/
 
 .not-found-layout {
@@ -172,8 +189,6 @@ div .message {
   text-align: center;
   justify-content: center;
 }
-
-
 
 /*---------Help---------*/
 
@@ -222,8 +237,7 @@ div .message {
 }
 .contact-form input,
 .contact-form textarea,
-.contact-form span
-{
+.contact-form span {
   display: block;
 }
 

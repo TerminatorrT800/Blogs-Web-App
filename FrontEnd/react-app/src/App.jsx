@@ -1,19 +1,20 @@
 //Router
-import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom";
 import apiRequest from "./request";
 const API_URL = import.meta.env.VITE_API_URL
 
 //Pages
-import Home from "./pages/Home";
-import Create from "./pages/Create";
 import BlogDetails from "./pages/BlogDetails";
-import Faq from "./pages/help/Faq";
-import Contact from "./pages/help/Contact";
+import Create from "./pages/Create";
 import ErrorPage from "./pages/error/ErrorPage";
+import Contact from "./pages/help/Contact";
+import Faq from "./pages/help/Faq";
+import Home from "./pages/Home";
 
 //Layouts
-import RootLayout from "./layouts/RootLayout";
 import HelpLayout from "./layouts/HelpLayout";
+import RootLayout from "./layouts/RootLayout";
+import NotFound from "./pages/NotFound";
 
 
 const blogsLoader = async ({ request }) => {
@@ -31,8 +32,8 @@ const blogsDetailsLoader = async ({ params, request }) => {
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
-        <Route index element={<Home />} loader={blogsLoader} errorElement={<ErrorPage />} />
+      <Route path="/" element={<RootLayout />} errorElement={<NotFound />}>
+        <Route path="blogs" element={<Home />} loader={blogsLoader} errorElement={<ErrorPage />} />
         <Route path="create" element={<Create />} />
         <Route path="blogs/:id" element={<BlogDetails />} loader={blogsDetailsLoader} errorElement={<ErrorPage />} />
         <Route path="help" element={<HelpLayout />}>
@@ -43,9 +44,6 @@ function App() {
 
     )
   )
-
-
-
 
   return (
     <RouterProvider router={router} />
